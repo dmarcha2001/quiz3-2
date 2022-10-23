@@ -5,19 +5,20 @@
 
 
 // this is the main function
-int main(){
+int main(int argc, char **argv){
 
     char item[]="";
     double price;
     srand(time(0));
-
     int i;
     double tax;
     double tip;
     double taxRate;
     double tipRate;
-    taxRate=10;
-    tipRate=10;
+    //taxRate=10;
+    //tipRate=10;
+    sscanf(argv[1],"%lf",&taxRate);
+    sscanf(argv[2],"%lf",&tipRate);
     i = rand() % 4;
     printf("i is %d \n",i);
     if (i == 0)
@@ -48,7 +49,7 @@ int main(){
     double total = price + tax + tip;
     printf("the Tax is: %.2f\n",tax);
     printf("the Tip is: %.2f\n",tip);
-    printf("the total is: %.2f",total);
+    printf("the total is: %.2f\n",total);
     return 0;
     
 }
